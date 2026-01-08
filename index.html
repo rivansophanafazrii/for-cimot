@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS -->
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <section id="halaman1" class="section-full active">
+      <div class="card-glass">
+        <h2 class="title">Ada pesan buat kamu</h2>
+        <div class="mail-wrapper" onclick="bukaPesan()">
+          <img src="assets/img/pesan.png" alt="Mail Icon" class="floating" />
+        </div>
+        <p class="instruction">Tekan untuk membuka</p>
+      </div>
+    </section>
+
+    <section id="halaman2" class="section-scroll">
+      <div class="panda-hero">
+        <div class="panda-card">
+          <img
+            src="assets/img/hbd.gif"
+            alt="Panda Birthday"
+            class="gif-panda"
+          />
+        </div>
+        <div class="scroll-badge">Scroll kebawah ya</div>
+      </div>
+
+      <div class="message-container">
+        <div class="msg-box" data-aos="zoom-in">Hai Kamu</div>
+
+        <div class="msg-box" data-aos="zoom-in">Cieeeee</div>
+
+        <div class="msg-box" data-aos="zoom-in">Yang hari ini ulang tahun</div>
+
+        <div class="msg-box" data-aos="zoom-in">Semoga panjang umur</div>
+
+        <div class="msg-box" data-aos="zoom-in">Sehat selalu</div>
+
+        <div class="msg-box" data-aos="zoom-in">
+          Semua yang diimpikan tercapai
+        </div>
+
+        <div class="msg-box" data-aos="zoom-in">
+          Harus lebih baik dari tahun lalu
+        </div>
+
+        <div class="msg-box" data-aos="zoom-in">
+          Semoga diberikan keberkahan
+        </div>
+
+        <div class="msg-box love-box" data-aos="zoom-in" onclick="showPopup()">
+          Coba kamu klik love nya <span class="heart">❤️</span>
+        </div>
+      </div>
+    </section>
+
+    <div id="modalOverlay" class="overlay">
+      <div class="modal-card" id="modalContent">
+        <div id="formSection">
+          <h3 class="modal-title">Di hari spesial ini kamu pengen nya apa?</h3>
+          <textarea id="pesanUser" placeholder="Tulis sesuatu..."></textarea>
+          <button class="btn-action" onclick="prosesKirim()">OK</button>
+        </div>
+        <div id="notifSection" style="display: none">
+          <h3 id="teksNotif" class="modal-title"></h3>
+          <button class="btn-action" onclick="closeNotif()">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <audio id="musik" loop>
+      <source src="assets/musik.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="assets/js/script.js"></script>
+    <!-- AOS JS -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

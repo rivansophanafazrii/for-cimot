@@ -1,0 +1,135 @@
+:root {
+    --bg-gradient: linear-gradient(180deg, #ff75c3 0%, #b084ff 100%);
+    --accent-color: #6c5ce7;
+    --text-dark: #2d3436;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    color: var(--text-dark);
+    overflow: hidden; /* Dikontrol via JS */
+}
+
+/* Base Section Styling */
+.section-full {
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-scroll {
+    display: none;
+    width: 100%;
+}
+
+.active { display: flex; animation: fadeIn 0.8s ease; }
+#halaman2.active { display: block; }
+
+/* Halaman 1: Card Style */
+.card-glass {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    max-width: 90%;
+}
+
+.mail-wrapper img { width: 120px; cursor: pointer; margin: 25px 0; transition: transform 0.3s; }
+.mail-wrapper img:hover { transform: scale(1.1); }
+
+/* Halaman 2: Panda & Scroll */
+.panda-hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.panda-card {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.gif-panda { width: 220px; border-radius: 10px; }
+
+.scroll-badge {
+    margin-top: 25px;
+    background: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Halaman 2: Messages */
+.message-container {
+    padding: 0 20px 100px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.msg-box {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.6;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.love-box { cursor: pointer; transition: 0.3s; }
+.love-box:hover { transform: translateY(-5px); background: #fff9fb; }
+.heart { color: #e84393; font-size: 1.2rem; }
+
+/* Modal System */
+.overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(5px);
+    display: none; justify-content: center; align-items: center;
+    z-index: 9999;
+}
+
+.modal-card {
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+textarea {
+    width: 100%; height: 120px;
+    margin: 20px 0; padding: 15px;
+    border: 2px solid #eee; border-radius: 15px;
+    resize: none; font-size: 1rem;
+}
+
+.btn-action {
+    background: var(--accent-color);
+    color: white; border: none;
+    padding: 12px 40px; border-radius: 12px;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+
+.btn-action:hover { opacity: 0.9; transform: scale(1.05); }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popUp { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes floating { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
+.floating { animation: floating 3s ease-in-out infinite; }
